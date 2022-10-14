@@ -3,7 +3,7 @@
 #include <stdio.h>
 /**
  * main - entry point
- * Description: prints if a number is greater than 5, zero or less than 6 and not 0
+ * Description: prints if a number is greater than 5, zero or less than 6
  * Return: 0
  */
 
