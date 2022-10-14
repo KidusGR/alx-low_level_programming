@@ -9,12 +9,14 @@
 
 int main(void)
 {
-	long long int n = 9876543210;
+	long int n = 9876543210;
+	int 1 = 0;
 
-	for (int i = 0; i < 10; i++)
+	while (i < 10)
 	{
 		putchar((n%10) + '0');
 		n = n/10;
+		i++;
 	}
 	putchar('\n');
 	return (0);
