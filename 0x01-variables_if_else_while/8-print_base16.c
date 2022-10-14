@@ -9,7 +9,7 @@
 
 int main(void)
 {
-	long long int n = 9876543210;
+	long int n = 9876543210;
 	char ch[8] = "abcdef";
 	int i = 0;
 	int j = 0;
