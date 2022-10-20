@@ -1,35 +1,47 @@
 #include "main.h"
-#include <limits.h>
 
 /**
- * print_number - print an integer, without using long, arrays, or pointers
- * @n: number to be printed
+ * print_number - Function that prints an integer.
+ * @n: int type number
+ * Description: Can only use _putchar to print.
  */
-
 void print_number(int n)
 {
-	unsigned int tens, digit;
-	int number = n;
-	double total_tens = 1;
+	long m; /* power of 10 */
+	int c; /* boolean check */
+	long num; /* convert int to long */
 
-	if (n == 0)
-		_putchar('0');
-	else
+	num = n;
+	/* negatives */
+	if (num < 0)
 	{
-		if (n < 0)
+		num *= -1;
+		_putchar('-');
+	}
+
+	/* count up */
+	m = 1;
+	c = 1;
+	while (c)
+	{
+		if (num / (m * 10) > 0)
+			m *= 10;
+		else
+			c = 0;
+	}
+
+	/* count down */
+	while (num >= 0)
+	{
+		if (m == 1)
 		{
-			number = n * -1;
-			_putchar('-');
+			_putchar(num % 10 + '0');
+			num = -1;
 		}
-		while (total_tens <= number)
-			total_tens *= 10;
-		tens = total_tens / 10;
-		while (tens >= 1)
+		else
 		{
-			digit = number / tens;
-			_putchar(digit + '0');
-			number = (number - (tens * digit));
-			tens /= 10;
+			_putchar((num / m % 10) + '0');
+			m /= 10;
 		}
 	}
 }
